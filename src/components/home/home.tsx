@@ -4,14 +4,11 @@ import styles from "./home.module.css";
 import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
 import { TypeAnimation } from "react-type-animation";
-import { useState } from "react";
 import SouthIcon from "@mui/icons-material/South";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 function HomeComponent() {
-  const [textColor, setTextColor] = useState("darkkhaki");
-
   return (
     <Box
       padding={"var(--global-padding-top) 1.5rem 1.5rem"}
@@ -22,7 +19,6 @@ function HomeComponent() {
       justifyContent={"center"}
     >
       <Box
-        color={textColor}
         display={"flex"}
         flexDirection={"column"}
         alignItems={"center"}
@@ -31,18 +27,18 @@ function HomeComponent() {
         <Typography variant={"h3"} gutterBottom color={"#fff8ee"}>
           Hi there!
         </Typography>
-        <Typography variant={"h6"} gutterBottom color={"#fff8ee"}>
+        <Typography variant={"h3"} gutterBottom color={"#fff8ee"}>
           I am
         </Typography>
         <Typography variant={"h2"} gutterBottom textAlign={"center"}>
           <TypeAnimation
-            sequence={[
-              "Software engineer",
-              2000,
-              () => setTextColor("darkkhaki"),
-              "",
-            ]}
+            sequence={["Software engineer", 2000, ""]}
             repeat={Infinity}
+            style={{
+              color: "transparent",
+              background: "linear-gradient(45deg, #09009f, #00ff95 80%) text",
+              fontWeight: "bold",
+            }}
           />
         </Typography>
         <Typography variant={"h1"} gutterBottom color={"#fff8ee"}>

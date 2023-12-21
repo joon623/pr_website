@@ -31,7 +31,6 @@ const About = () => {
             variant={"h5"}
             gutterBottom
             textAlign={"center"}
-            // color={themeStyles.color.primary.floralWhite}
             className={styles.text}
           >
             &quot;Habit is life, and attitude is everything.&quot;
