@@ -9,8 +9,6 @@ function Work() {
           Work
         </Typography>
       </Box>
-      <Box color={"#fff8ee"}>Work</Box>
-      <Box color={"#fff8ee"}>Work</Box>
     </Box>
   );
 }

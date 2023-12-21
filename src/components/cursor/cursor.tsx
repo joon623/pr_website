@@ -25,6 +25,7 @@ function Cursor() {
       position={"fixed"}
       left={x}
       top={y}
+      zIndex={-1}
       border={"2px solid gray"}
       borderRadius={"50%"}
       width={"20px"}

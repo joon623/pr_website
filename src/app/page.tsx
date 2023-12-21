@@ -2,7 +2,7 @@ import { Navigation } from "@/components/nav/index";
 import { HomeComponent } from "@/components/home";
 import { About } from "@/components/about";
 import { Work } from "@/components/work";
-import Cursor from "@/components/cursor/cursor";
+import Contact from "@/components/contact/contact";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
       <HomeComponent />
       <About />
       <Work />
-      <Cursor />
+      <Contact />
     </>
   );
 }
