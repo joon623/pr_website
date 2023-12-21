@@ -1,8 +1,3 @@
-.wrapper {
-    padding: var(--global-padding-top) 1.5rem 1.5rem;
-}
-
-
 .arrow {
     display: flex;
     justify-content: center;

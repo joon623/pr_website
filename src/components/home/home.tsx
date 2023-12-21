@@ -7,18 +7,30 @@ import { TypeAnimation } from "react-type-animation";
 import { useState } from "react";
 import SouthIcon from "@mui/icons-material/South";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 function HomeComponent() {
   const [textColor, setTextColor] = useState("darkkhaki");
 
   return (
-    <div className={styles.wrapper}>
+    <Box
+      padding={"var(--global-padding-top) 1.5rem 1.5rem"}
+      height={"100vh"}
+      display={"flex"}
+      flexDirection={"column"}
+      alignItems={"center"}
+      justifyContent={"center"}
+    >
       <Box
         color={textColor}
         display={"flex"}
-        alignItems={"center"}
         flexDirection={"column"}
+        alignItems={"center"}
+        justifyContent={"center"}
       >
+        <Typography variant={"h3"} gutterBottom color={"#fff8ee"}>
+          Hi there!
+        </Typography>
         <Typography variant={"h6"} gutterBottom color={"#fff8ee"}>
           I am
         </Typography>
@@ -52,7 +64,20 @@ function HomeComponent() {
       >
         <SouthIcon fontSize="inherit" />
       </motion.div>
-    </div>
+      <Image
+        src={"/bg1.jpg"}
+        alt={"bg-image"}
+        quality={100}
+        fill
+        sizes="100vw"
+        style={{
+          objectFit: "cover",
+          opacity: 0.3,
+          zIndex: -1,
+        }}
+        priority
+      />
+    </Box>
   );
 }
 

@@ -1,17 +1,13 @@
-import styles from './page.module.css'
-import {Navigation} from "@/components/nav/index";
-import {HomeComponent} from "@/components/home";
-
+import { Navigation } from "@/components/nav/index";
+import { HomeComponent } from "@/components/home";
+import { About } from "@/components/about";
 
 export default function Home() {
-    return (
-        <>
-            <Navigation/>
-            <main className={styles.main}>
-                <HomeComponent/>
-            </main>
-        </>
-    )
+  return (
+    <>
+      <Navigation />
+      <HomeComponent />
+      <About />
+    </>
+  );
 }
-
-
