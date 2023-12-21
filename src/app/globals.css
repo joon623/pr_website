@@ -71,4 +71,9 @@ body {
 button {
     outline: none;
     border: none;
+    cursor: pointer;
+}
+
+.root {
+    padding: 1.5rem;
 }

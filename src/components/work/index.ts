@@ -1,1 +1,1 @@
-export { default as Work } from "./work";
+export { default as Work } from "./WorkPage";

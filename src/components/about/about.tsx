@@ -17,7 +17,7 @@ const About = () => {
       display={"flex"}
       alignItems={"center"}
       flexDirection={"column"}
-      height={"1200px"}
+      height={"800px"}
     >
       <Box position={"sticky"} top={"50%"} ref={ref}>
         <motion.div
