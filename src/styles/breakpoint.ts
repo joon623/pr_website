@@ -1,0 +1,1 @@
+export const mediaQueryInput = '(min-width:768px)';
