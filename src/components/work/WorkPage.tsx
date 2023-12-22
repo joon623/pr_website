@@ -1,9 +1,10 @@
 "use client";
 
-import { Typography, useMediaQuery } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 import { Box } from "@mui/system";
 import { WorkCard } from "@/components/cards";
 import { mediaQueryInput } from "@/styles/breakpoint";
+import Title from "@/components/atoms/text/title";
 
 function WorkPage() {
   const matches = useMediaQuery(mediaQueryInput);
@@ -22,10 +23,7 @@ function WorkPage() {
         justifyContent={"center"}
         marginBottom={"1.5rem"}
       >
-        <Typography color={"#fff8ee"} variant={"h2"}>
-          Work
-          <br /> Experience
-        </Typography>
+        <Title title={"Work\nExperience"} />
       </Box>
       <Box>
         <WorkCard />
