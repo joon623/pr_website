@@ -1,11 +1,12 @@
 import { Box } from "@mui/system";
-import { ReactNode } from "react";
+import { CSSProperties, ReactNode } from "react";
 
 interface CircleProps {
   children: ReactNode;
+  style?: CSSProperties;
 }
 
-function Circle({ children }: CircleProps) {
+function Circle({ children, style }: CircleProps) {
   return (
     <Box
       width={"100px"}
@@ -13,6 +14,7 @@ function Circle({ children }: CircleProps) {
       border={"8px solid rgba(58, 170, 222, 0.3)"}
       borderRadius={"50%"}
       position={"relative"}
+      style={style}
     >
       <Box
         position={"absolute"}
