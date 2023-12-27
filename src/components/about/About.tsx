@@ -17,7 +17,7 @@ const About = () => {
       display={"flex"}
       alignItems={"center"}
       flexDirection={"column"}
-      height={"800px"}
+      height={"1200px"}
     >
       <Box position={"sticky"} top={"50%"} ref={ref}>
         <motion.div
@@ -45,7 +45,7 @@ const About = () => {
               ]}
               speed={{ type: "keyStrokeDelayInMs", value: 30 }}
               omitDeletionAnimation={true}
-            ></TypeAnimation>
+            />
           </Typography>
         </motion.div>
       </Box>
