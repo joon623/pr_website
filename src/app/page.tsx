@@ -1,4 +1,3 @@
-import { Navigation } from "@/components/nav/index";
 import { HomeComponent } from "@/components/home";
 import { About } from "@/components/about";
 import { Work } from "@/components/work";
@@ -9,15 +8,12 @@ import "./globals.css";
 
 export default function Home() {
   return (
-    <>
-      <Navigation />
-      <Box className="root">
-        <HomeComponent />
-        <About />
-        <Work />
-        <Skills />
-        <Contact />
-      </Box>
-    </>
+    <Box className="root" component={"main"}>
+      <HomeComponent />
+      <About />
+      <Work />
+      <Skills />
+      <Contact />
+    </Box>
   );
 }

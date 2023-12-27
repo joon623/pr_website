@@ -5,15 +5,17 @@ import { useMediaQuery } from "@mui/material";
 import { mediaQueryInput } from "@/styles/breakpoint";
 import WorkTags from "@/components/tags/WorkTags";
 import { motion } from "framer-motion";
+import { v4 } from "uuid";
 
 interface WorkCardProps {
   date: string;
   title: string;
+  role: string;
   content: string;
   tags: string[];
 }
 
-function WorkCard() {
+function WorkCard({ date, title, role, content, tags }: WorkCardProps) {
   const matches = useMediaQuery(mediaQueryInput);
 
   return (
@@ -24,7 +26,7 @@ function WorkCard() {
       transition={{
         duration: 1,
       }}
-      style={{ position: "relative", top: "80px" }} // 초기 위치 조정
+      style={{ position: "relative", top: "80px" }}
     >
       <Box
         display={matches ? "flex" : "auto"}
@@ -40,31 +42,34 @@ function WorkCard() {
           width={"max-content"}
           flex={2}
         >
-          2023 - PRESENT
+          {date}
         </Box>
         <Box color={"#E2E88F0"} flex={8}>
-          <Box marginTop={matches ? "0px" : "0.5rem"}>B2B Sass Dashboard</Box>
+          <Box marginTop={matches ? "0px" : "0.5rem"}>{title}</Box>
+          <Box
+            marginTop={matches ? "5px" : "0.5rem"}
+            color={"rgb(207, 204, 198)"}
+            fontSize={"12px"}
+          >
+            {role}
+          </Box>
           <Box
             marginTop={"0.5rem"}
-            component="p"
+            component="div"
             color={"#94a4b8"}
             fontSize={".875rem"}
           >
-            Deliver high-quality, robust production code for a diverse array of
-            projects for clients including Harvard Business School, Everytown
-            for Gun Safety, Pratt Institute, Koala Health, Vanderbilt
-            University, The 19th News, and more. Provide leadership within
-            engineering department through close collaboration, knowledge
-            shares, and mentorship.
+            <ul>
+              {content.split("\n").map((item) => (
+                <li key={v4()}>{item}</li>
+              ))}
+            </ul>
           </Box>
           <Box marginTop={"0.5rem"} />
           <Box display={"flex"} gap={"0.75rem"} flexWrap={"wrap"}>
-            <WorkTags name={"React"} />
-            <WorkTags name={"React"} />
-            <WorkTags name={"React"} />
-            <WorkTags name={"React"} />
-            <WorkTags name={"React"} />
-            <WorkTags name={"React"} />
+            {tags.map((tag) => (
+              <WorkTags name={tag} key={v4()} />
+            ))}
           </Box>
         </Box>
       </Box>
