@@ -34,6 +34,7 @@ function HomeInformation() {
           <TypeAnimation
             sequence={["Software engineer", 2000, ""]}
             repeat={Infinity}
+            cursor={false}
             style={{
               color: "transparent",
               background: "linear-gradient(45deg, #09009f, #00ff95 80%) text",
