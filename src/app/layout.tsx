@@ -11,7 +11,7 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "Jun.",
-  description: "Welcome my website",
+  description: "Welcome jun website",
 };
 
 export default function RootLayout({
@@ -21,6 +21,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className={roboto.className}>{children}</body>
     </html>
   );

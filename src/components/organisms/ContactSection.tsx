@@ -4,9 +4,8 @@ import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import styles from "./contact.module.css";
 
-function Contact() {
+function ContactSection() {
   return (
     <Box
       display={"flex"}
@@ -14,6 +13,7 @@ function Contact() {
       alignItems={"center"}
       justifyContent={"center"}
       padding={"20px"}
+      component={"section"}
     >
       <Typography color={"#fff8ee"} variant={"h2"}>
         Contact
@@ -23,7 +23,23 @@ function Contact() {
       </Typography>
       <Box marginTop={"20px"}>
         <a href="mailto:devjoon623@gmail.com">
-          <button className={styles.buttons}>Send Mail</button>
+          <button
+            style={{
+              backgroundImage:
+                "linear-gradient(to right, #B3FFAB 0%, #12FFF7 51%, #B3FFAB 100%)",
+              margin: "10p",
+              padding: "15px 45px",
+              textAlign: "center",
+              textTransform: "uppercase",
+              backgroundSize: "200% auto",
+              color: "white",
+              boxShadow: "0 0 20px #eee",
+              borderRadius: "10px",
+              display: "block",
+            }}
+          >
+            Send Mail
+          </button>
         </a>
       </Box>
       <Box display={"flex"} gap={"15px"} marginTop={"15px"}>
@@ -41,4 +57,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default ContactSection;

@@ -2,10 +2,10 @@
 
 import { useMediaQuery } from "@mui/material";
 import { Box } from "@mui/system";
-import { WorkCard } from "@/components/cards";
 import { mediaQueryInput } from "@/styles/breakpoint";
-import Title from "@/components/atoms/text/title";
+import Title from "@/components/atoms/Title";
 import { v4 } from "uuid";
+import { WorkCard } from "@/components/mocules";
 
 const WORK_DATA = [
   {
@@ -97,7 +97,7 @@ const WORK_DATA = [
   },
 ];
 
-function WorkPage() {
+function WorkExperiences() {
   const matches = useMediaQuery(mediaQueryInput);
 
   return (
@@ -105,6 +105,7 @@ function WorkPage() {
       padding={"300px 0px 100px"}
       display={matches ? "flex" : "auto"}
       gap={"3rem"}
+      component={"section"}
     >
       <Box
         position={matches ? "sticky" : "static"}
@@ -132,4 +133,4 @@ function WorkPage() {
   );
 }
 
-export default WorkPage;
+export default WorkExperiences;

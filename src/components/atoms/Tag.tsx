@@ -1,10 +1,10 @@
 import { Box } from "@mui/system";
 
-interface WorkTagsProps {
+interface TagProps {
   name: string;
 }
 
-function WorkTags({ name }: WorkTagsProps) {
+function Tag({ name }: TagProps) {
   return (
     <Box
       fontSize={"0.75rem"}
@@ -20,4 +20,4 @@ function WorkTags({ name }: WorkTagsProps) {
   );
 }
 
-export default WorkTags;
+export default Tag;

@@ -1,6 +1,5 @@
 "use client";
 
-import styles from "./home.module.css";
 import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
 import { TypeAnimation } from "react-type-animation";
@@ -8,7 +7,7 @@ import SouthIcon from "@mui/icons-material/South";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-function HomeComponent() {
+function HomeInformation() {
   return (
     <Box
       padding={"var(--global-padding-top) 1.5rem 1.5rem"}
@@ -17,6 +16,7 @@ function HomeComponent() {
       flexDirection={"column"}
       alignItems={"center"}
       justifyContent={"center"}
+      component={"section"}
     >
       <Box
         display={"flex"}
@@ -46,7 +46,6 @@ function HomeComponent() {
         </Typography>
       </Box>
       <motion.div
-        className={styles.arrow}
         animate={{
           y: 40,
         }}
@@ -56,6 +55,12 @@ function HomeComponent() {
         transition={{
           repeat: Infinity,
           duration: 2,
+        }}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          fontSize: "70px",
+          marginTop: "50px",
         }}
       >
         <SouthIcon fontSize="inherit" />
@@ -77,4 +82,4 @@ function HomeComponent() {
   );
 }
 
-export default HomeComponent;
+export default HomeInformation;

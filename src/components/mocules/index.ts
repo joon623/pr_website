@@ -1,2 +1,2 @@
-export { default as Skills } from "./Skills";
 export { default as SkillCircles } from "./SkillCircles";
+export { default as WorkCard } from "./WorkCard";

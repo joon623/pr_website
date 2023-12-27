@@ -3,7 +3,7 @@
 import { Box } from "@mui/system";
 import { useMediaQuery } from "@mui/material";
 import { mediaQueryInput } from "@/styles/breakpoint";
-import WorkTags from "@/components/tags/WorkTags";
+import Tag from "@/components/atoms/Tag";
 import { motion } from "framer-motion";
 import { v4 } from "uuid";
 
@@ -68,7 +68,7 @@ function WorkCard({ date, title, role, content, tags }: WorkCardProps) {
           <Box marginTop={"0.5rem"} />
           <Box display={"flex"} gap={"0.75rem"} flexWrap={"wrap"}>
             {tags.map((tag) => (
-              <WorkTags name={tag} key={v4()} />
+              <Tag name={tag} key={v4()} />
             ))}
           </Box>
         </Box>

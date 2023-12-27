@@ -5,10 +5,9 @@ import { Typography } from "@mui/material";
 import { themeStyles } from "@/styles/theme";
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import styles from "./about.module.css";
 import { TypeAnimation } from "react-type-animation";
 
-const About = () => {
+const AboutSection = () => {
   const ref = useRef(null);
 
   return (
@@ -31,7 +30,12 @@ const About = () => {
             variant={"h5"}
             gutterBottom
             textAlign={"center"}
-            className={styles.text}
+            style={{
+              background:
+                "linear-gradient(96.77deg, rgb(249, 106, 25) -0.96%, rgb(251, 96, 189) 100%)",
+              backgroundClip: "text",
+              color: "transparent",
+            }}
           >
             &quot;Habit is life, and attitude is everything.&quot;
           </Typography>
@@ -53,4 +57,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutSection;

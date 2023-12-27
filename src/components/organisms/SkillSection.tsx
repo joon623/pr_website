@@ -1,14 +1,14 @@
 "use client";
 
 import { Box } from "@mui/system";
-import Title from "@/components/atoms/text/title";
-import Circle from "@/components/atoms/shape/circle";
+import Circle from "@/components/atoms/Circle";
 import { useEffect, useRef, useState } from "react";
-import { SkillCircles } from "@/components/skills/index";
 import { useMediaQuery } from "@mui/material";
 import { mediaQueryInput } from "@/styles/breakpoint";
+import { Title } from "@/components/atoms";
+import { SkillCircles } from "@/components/mocules";
 
-function Skills() {
+function SkillSection() {
   const [selected, setSelected] = useState(-1);
   const matches = useMediaQuery(mediaQueryInput);
 
@@ -50,7 +50,7 @@ function Skills() {
   }, []);
 
   return (
-    <Box paddingBottom={"25rem"}>
+    <Box paddingBottom={"25rem"} component={"section"}>
       <Box display={"flex"} justifyContent={"center"}>
         <Title title={"Skills"} />
       </Box>
@@ -107,4 +107,4 @@ function Skills() {
   );
 }
 
-export default Skills;
+export default SkillSection;

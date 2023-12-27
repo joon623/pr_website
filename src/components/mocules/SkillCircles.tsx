@@ -8,7 +8,7 @@ import React, {
   useState,
 } from "react";
 import Image from "next/image";
-import Circle from "@/components/atoms/shape/circle";
+import Circle from "@/components/atoms/Circle";
 import { Box } from "@mui/system";
 
 interface SkillCirclesProps {
