@@ -53,27 +53,11 @@ function Skills() {
       </Box>
       <SkillCircles
         items={[
-          "/ts.webp",
-          "/ts.webp",
-          "/ts.webp",
-          "/ts.webp",
-          "/ts.webp",
-          "/ts.webp",
-        ]}
-        centerItem={
-          <Box ref={feRef}>
-            <Circle>Frontend</Circle>
-          </Box>
-        }
-        isSelected={selected === 0}
-      />
-      <SkillCircles
-        items={[
-          "/ts.webp",
-          "/ts.webp",
-          "/ts.webp",
-          "/ts.webp",
-          "/ts.webp",
+          "/fastapi.png",
+          "/express.png",
+          "/node.jpeg",
+          "/python.png",
+          "/mysql.png",
           "/ts.webp",
         ]}
         centerItem={
@@ -86,12 +70,21 @@ function Skills() {
       <SkillCircles
         items={[
           "/ts.webp",
-          "/ts.webp",
-          "/ts.webp",
-          "/ts.webp",
-          "/ts.webp",
-          "/ts.webp",
+          "/nextjs.png",
+          "/react.png",
+          "/html.png",
+          "/css.jpg",
+          "/javascript.png",
         ]}
+        centerItem={
+          <Box ref={feRef}>
+            <Circle>Frontend</Circle>
+          </Box>
+        }
+        isSelected={selected === 0}
+      />
+      <SkillCircles
+        items={["/vercel.jpeg", "/aws.png", "/docker.png", "/heroku.png"]}
         centerItem={
           <Box ref={infraRef}>
             <Circle>Infra</Circle>

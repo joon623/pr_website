@@ -93,7 +93,7 @@ const WORK_DATA = [
       "Implemented custom views using Canvas.\n" +
       "Enabled background music playback feature.\n" +
       "Error logging using Crashlytics.",
-    tags: ["Android", "Mvvm", "CleanArchitecture", "JetPack", "Canvas"],
+    tags: ["Android", "MVVM", "CleanArchitecture", "JetPack", "Canvas"],
   },
 ];
 
