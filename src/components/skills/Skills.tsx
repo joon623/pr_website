@@ -5,9 +5,12 @@ import Title from "@/components/atoms/text/title";
 import Circle from "@/components/atoms/shape/circle";
 import { useEffect, useRef, useState } from "react";
 import { SkillCircles } from "@/components/skills/index";
+import { useMediaQuery } from "@mui/material";
+import { mediaQueryInput } from "@/styles/breakpoint";
 
 function Skills() {
   const [selected, setSelected] = useState(-1);
+  const matches = useMediaQuery(mediaQueryInput);
 
   const feRef = useRef<HTMLDivElement>(null);
   const beRef = useRef<HTMLDivElement>(null);
@@ -51,47 +54,55 @@ function Skills() {
       <Box display={"flex"} justifyContent={"center"}>
         <Title title={"Skills"} />
       </Box>
-      <SkillCircles
-        items={[
-          "/fastapi.png",
-          "/express.png",
-          "/node.jpeg",
-          "/python.png",
-          "/mysql.png",
-          "/ts.webp",
-        ]}
-        centerItem={
-          <Box ref={beRef}>
-            <Circle>Backend</Circle>
-          </Box>
-        }
-        isSelected={selected === 1}
-      />
-      <SkillCircles
-        items={[
-          "/ts.webp",
-          "/nextjs.png",
-          "/react.png",
-          "/html.png",
-          "/css.jpg",
-          "/javascript.png",
-        ]}
-        centerItem={
-          <Box ref={feRef}>
-            <Circle>Frontend</Circle>
-          </Box>
-        }
-        isSelected={selected === 0}
-      />
-      <SkillCircles
-        items={["/vercel.jpeg", "/aws.png", "/docker.png", "/heroku.png"]}
-        centerItem={
-          <Box ref={infraRef}>
-            <Circle>Infra</Circle>
-          </Box>
-        }
-        isSelected={selected === 2}
-      />
+      <Box
+        style={{
+          display: matches ? "flex" : "block",
+          justifyContent: "center",
+          gap: "12rem",
+        }}
+      >
+        <SkillCircles
+          items={[
+            "/fastapi.png",
+            "/express.png",
+            "/node.jpeg",
+            "/python.png",
+            "/mysql.png",
+            "/ts.webp",
+          ]}
+          centerItem={
+            <Box ref={beRef}>
+              <Circle>Backend</Circle>
+            </Box>
+          }
+          isSelected={selected === 1}
+        />
+        <SkillCircles
+          items={[
+            "/ts.webp",
+            "/nextjs.png",
+            "/react.png",
+            "/html.png",
+            "/css.jpg",
+            "/javascript.png",
+          ]}
+          centerItem={
+            <Box ref={feRef}>
+              <Circle>Frontend</Circle>
+            </Box>
+          }
+          isSelected={selected === 0}
+        />
+        <SkillCircles
+          items={["/vercel.jpeg", "/aws.png", "/docker.png", "/heroku.png"]}
+          centerItem={
+            <Box ref={infraRef}>
+              <Circle>Infra</Circle>
+            </Box>
+          }
+          isSelected={selected === 2}
+        />
+      </Box>
     </Box>
   );
 }
