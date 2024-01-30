@@ -11,7 +11,7 @@ const WORK_DATA = [
   {
     date: "March. 2023 ~ Now",
     title: "B2B Saas API Platform (Asleep)",
-    role: "Backend Developer",
+    role: "Fullstack Engineer",
     content:
       "Developed Dashboard APIs offering metrics like DAU, MAU, and Stickiness, resolving cross-domain service calls via BFF implementation.\n" +
       "Introduced consistent code conventions through DDD adoption (Hexagonal Architecture, Layered Architecture), along with comprehensive Integration and Unit testing.\n" +
@@ -28,7 +28,7 @@ const WORK_DATA = [
   {
     date: "Nov. 2022 ~ Feb. 2023",
     title: "B2B Saas Dashboard (Asleep)",
-    role: "Frontend Developer",
+    role: "Frontend Engineer",
     content:
       "Enhancing initial loading speed\n" +
       "Implementing Streaming SSR\n" +
@@ -45,7 +45,7 @@ const WORK_DATA = [
   {
     date: "March. 2022 ~ Nov. 2022",
     title: "B2C application for managing sleep habits (Asleep)",
-    role: "Frontend Developer",
+    role: "Frontend Engineer",
     content:
       "Developing a web view for sleep habit management application reports\n" +
       "Enhancing Carousel performance\n" +
@@ -69,7 +69,7 @@ const WORK_DATA = [
   {
     date: "Nov. 2020 ~ March. 2023",
     title: "Developed and maintained the official website for A-Sleep (Asleep)",
-    role: "Frontend Developer",
+    role: "Frontend Engineer",
     content:
       "Applying SSR, SSG, and ISR (incremental static regeneration)\n" +
       "Minimizing API calls for optimal performance\n" +
@@ -85,7 +85,7 @@ const WORK_DATA = [
     date: "April. 2020 ~ July. 2021",
     title:
       "Sleep analysis application based on AI analysis of sound data (Asleep)",
-    role: "Android Developer",
+    role: "Android Engineer",
     content:
       "Set up Android technical environment and implemented all features.\n" +
       "Implemented background recording using Foreground Service.\n" +
