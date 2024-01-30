@@ -23,7 +23,7 @@ const WORK_DATA = [
       "Developed an admin panel managing contracts, emails, and usage, enhancing architecture considering development effort by utilizing GraphQL for communication among MSA services.\n" +
       "Implemented CI/CD pipelines using Github Action, integrated RBAC for user authorization via Cognito, and established offset-based Pagination, coupled with API Logging using Datadog.\n" +
       'Expedited development in Developer Mode by shortening sleep analysis feature development from a minimum of 20 minutes to 2 minutes by optimizing data storage speed without persistence using Redis."',
-    tags: ["FastAPI", "Python", "DDD", "MSA", "AWS", "MySQL", "Graphql"],
+    tags: ["Next.js", "Typescript", "FastAPI", "Python", "Graphql"],
   },
   {
     date: "Nov. 2022 ~ Feb. 2023",
