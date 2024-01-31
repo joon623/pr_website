@@ -11,7 +11,7 @@ const WORK_DATA = [
   {
     date: "March. 2023 ~ Now",
     title: "B2B Saas API Platform (Asleep)",
-    role: "Fullstack Engineer",
+    role: "`Fullstack` Engineer",
     content:
       "Developed Dashboard APIs offering metrics like DAU, MAU, and Stickiness, resolving cross-domain service calls via BFF implementation.\n" +
       "Introduced consistent code conventions through DDD adoption (Hexagonal Architecture, Layered Architecture), along with comprehensive Integration and Unit testing.\n" +
@@ -23,7 +23,7 @@ const WORK_DATA = [
       "Developed an admin panel managing contracts, emails, and usage, enhancing architecture considering development effort by utilizing GraphQL for communication among MSA services.\n" +
       "Implemented CI/CD pipelines using Github Action, integrated RBAC for user authorization via Cognito, and established offset-based Pagination, coupled with API Logging using Datadog.\n" +
       'Expedited development in Developer Mode by shortening sleep analysis feature development from a minimum of 20 minutes to 2 minutes by optimizing data storage speed without persistence using Redis."',
-    tags: ["Next.js", "Typescript", "FastAPI", "Python", "Graphql"],
+    tags: ["FastAPI", "Python", "Graphql", "AWS", "MySQL"],
   },
   {
     date: "Nov. 2022 ~ Feb. 2023",
