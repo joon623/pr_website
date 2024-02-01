@@ -11,7 +11,7 @@ interface WorkCardProps {
   date: string;
   title: string;
   role: string;
-  content: string;
+  content: string[];
   tags: string[];
 }
 
