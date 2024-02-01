@@ -7,7 +7,12 @@ import SouthIcon from "@mui/icons-material/South";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-function HomeInformation() {
+interface HomeInformationProps {
+  job: string;
+  name: string;
+}
+
+function HomeInformation({ job, name }: HomeInformationProps) {
   return (
     <Box
       padding={"var(--global-padding-top) 1.5rem 1.5rem"}
@@ -32,7 +37,7 @@ function HomeInformation() {
         </Typography>
         <Typography variant={"h2"} gutterBottom textAlign={"center"}>
           <TypeAnimation
-            sequence={["Software engineer", 2000, ""]}
+            sequence={[job, 2000, ""]}
             repeat={Infinity}
             cursor={false}
             style={{
@@ -43,7 +48,7 @@ function HomeInformation() {
           />
         </Typography>
         <Typography variant={"h1"} gutterBottom color={"#fff8ee"}>
-          Jun
+          {name}
         </Typography>
       </Box>
       <motion.div
