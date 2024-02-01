@@ -72,7 +72,7 @@ function HomeInformation({ job, name }: HomeInformationProps) {
         <SouthIcon fontSize="inherit" />
       </motion.div>
       <Image
-        src={"/bg1.jpg"}
+        src={"/images/bg1.jpg"}
         alt={"bg-image"}
         quality={100}
         fill
