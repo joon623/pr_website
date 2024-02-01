@@ -30,7 +30,7 @@ function WorkCard({ date, title, role, content, tags }: WorkCardProps) {
     >
       <Box
         display={matches ? "flex" : "auto"}
-        height={matches ? "45vh" : "auto"}
+        minHeight={matches ? "45vh" : "auto"}
         marginBottom={"50px"}
         justifyContent={"space-between"}
         alignItems={"start"}
