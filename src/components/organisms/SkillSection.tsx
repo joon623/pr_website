@@ -8,7 +8,11 @@ import { mediaQueryInput } from "@/styles/breakpoint";
 import { Title } from "@/components/atoms";
 import { SkillCircles } from "@/components/mocules";
 
-function SkillSection() {
+interface SkillSectionProps {
+  skills: { category: string; images: string[] }[];
+}
+
+function SkillSection({ skills }: SkillSectionProps) {
   const [selected, setSelected] = useState(-1);
   const matches = useMediaQuery(mediaQueryInput);
 
@@ -62,42 +66,28 @@ function SkillSection() {
         }}
       >
         <SkillCircles
-          items={[
-            "/fastapi.png",
-            "/express.png",
-            "/node.jpeg",
-            "/python.png",
-            "/mysql.png",
-            "/ts.webp",
-          ]}
-          centerItem={
-            <Box ref={beRef}>
-              <Circle>Backend</Circle>
-            </Box>
-          }
-          isSelected={selected === 1}
-        />
-        <SkillCircles
-          items={[
-            "/ts.webp",
-            "/nextjs.png",
-            "/react.png",
-            "/html.png",
-            "/css.jpg",
-            "/javascript.png",
-          ]}
+          items={skills[0].images}
           centerItem={
             <Box ref={feRef}>
-              <Circle>Frontend</Circle>
+              <Circle>{skills[0].category}</Circle>
             </Box>
           }
           isSelected={selected === 0}
         />
         <SkillCircles
-          items={["/vercel.jpeg", "/aws.png", "/docker.png", "/heroku.png"]}
+          items={skills[1].images}
+          centerItem={
+            <Box ref={beRef}>
+              <Circle>{skills[1].category}</Circle>
+            </Box>
+          }
+          isSelected={selected === 1}
+        />
+        <SkillCircles
+          items={skills[2].images}
           centerItem={
             <Box ref={infraRef}>
-              <Circle>Infra</Circle>
+              <Circle>{skills[2].category}</Circle>
             </Box>
           }
           isSelected={selected === 2}

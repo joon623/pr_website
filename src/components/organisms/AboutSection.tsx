@@ -7,7 +7,12 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 
-const AboutSection = () => {
+interface AboutSectionProps {
+  title: string;
+  content: string;
+}
+
+const AboutSection = ({ title, content }: AboutSectionProps) => {
   const ref = useRef(null);
 
   return (
@@ -37,16 +42,14 @@ const AboutSection = () => {
               color: "transparent",
             }}
           >
-            &quot;Habit is life, and attitude is everything.&quot;
+            {title}
           </Typography>
           <Typography
             color={themeStyles.color.primary.floralWhite}
             maxWidth={"560px"}
           >
             <TypeAnimation
-              sequence={[
-                "I quickly develop and solve problems by any means for business success. I sacrifice for the team to produce results. Even at the beginning, I swiftly learn and immediately apply it to work.",
-              ]}
+              sequence={[content]}
               speed={{ type: "keyStrokeDelayInMs", value: 30 }}
               omitDeletionAnimation={true}
             />

@@ -5,7 +5,13 @@ import { Typography } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
-function ContactSection() {
+interface ContactSectionProps {
+  email: string;
+  linkedIn: string;
+  gitHub: string;
+}
+
+function ContactSection({ email, linkedIn, gitHub }: ContactSectionProps) {
   return (
     <Box
       display={"flex"}
@@ -19,10 +25,10 @@ function ContactSection() {
         Contact
       </Typography>
       <Typography color={"#fff8ee"} variant={"h6"}>
-        devjoon623@gmail.com
+        {email}
       </Typography>
       <Box marginTop={"20px"}>
-        <a href="mailto:devjoon623@gmail.com">
+        <a href={`mailto:${email}`}>
           <button
             style={{
               backgroundImage:
@@ -43,13 +49,10 @@ function ContactSection() {
         </a>
       </Box>
       <Box display={"flex"} gap={"15px"} marginTop={"15px"}>
-        <a href="https://github.com/joon623" target="_blank">
+        <a href={gitHub} target="_blank">
           <GitHubIcon />
         </a>
-        <a
-          href="https://www.linkedin.com/in/namjun-park-60423a1bb/"
-          target="_blank"
-        >
+        <a href={linkedIn} target="_blank">
           <LinkedInIcon />
         </a>
       </Box>

@@ -60,7 +60,7 @@ function WorkCard({ date, title, role, content, tags }: WorkCardProps) {
             fontSize={".875rem"}
           >
             <ul>
-              {content.split("\n").map((item) => (
+              {content.map((item) => (
                 <li key={v4()}>{item}</li>
               ))}
             </ul>

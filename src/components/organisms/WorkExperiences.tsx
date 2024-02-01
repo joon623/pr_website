@@ -11,7 +11,7 @@ const WORK_DATA = [
   {
     date: "March. 2023 ~ Now",
     title: "B2B Saas API Platform (Asleep)",
-    role: "`Fullstack` Engineer",
+    role: "Backend Engineer",
     content:
       "Developed Dashboard APIs offering metrics like DAU, MAU, and Stickiness, resolving cross-domain service calls via BFF implementation.\n" +
       "Introduced consistent code conventions through DDD adoption (Hexagonal Architecture, Layered Architecture), along with comprehensive Integration and Unit testing.\n" +
@@ -97,7 +97,17 @@ const WORK_DATA = [
   },
 ];
 
-function WorkExperiences() {
+interface WorkExperiencesProps {
+  experiences: {
+    date: string;
+    title: string;
+    role: string;
+    content: string;
+    tags: string[];
+  }[];
+}
+
+function WorkExperiences({ experiences }: WorkExperiencesProps) {
   const matches = useMediaQuery(mediaQueryInput);
 
   return (
@@ -118,7 +128,7 @@ function WorkExperiences() {
         <Title title={"Work\nExperience"} />
       </Box>
       <Box>
-        {WORK_DATA.map((work) => (
+        {experiences.map((work) => (
           <WorkCard
             key={v4()}
             role={work.role}
