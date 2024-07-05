@@ -9,6 +9,40 @@
   },
   "experiences": [
     {
+      "date": "March. 2024 ~ Now",
+      "title": "Tax Refund Service Maintenance and Development (Z ENTERPRISE)",
+      "role": "Frontend Engineer",
+      "content": [
+        "Improved operational environment by automating Continuous Integration tests using Github Action and Husky.",
+        "Enhanced automated deployment systems utilizing Lambda and Event Bridge.",
+        "Established monitoring systems with Datadog Error Alert and Real User Monitoring.",
+        "Implemented a non-deployment service check page using Edge Config and Middleware.",
+        "Conducted A/B testing to optimize service features.",
+        "Set up an independent testing environment increasing Test Coverage from 0% to 30%.",
+        "Enabled API-independent environment through GraphQL Mocking and transitioned from MSW to Cypress Intercept.",
+        "Minimized flaky tests to improve reliability.",
+        "Enhanced Core Web Vitals metrics, focusing on LCP improvement through Image and Font Optimization.",
+        "Upgraded legacy design systems and maintained Xstate.",
+        "Managed large-scale traffic promotions by separating Service FE and Promotion FE servers.",
+        "Developed a waiting logic for managing DB connections during high traffic."
+      ],
+      "tags": [
+        "Next.js",
+        "Relay",
+        "Github Action",
+        "AWS Lambda",
+        "Event Bridge",
+        "Datadog",
+        "Edge Config",
+        "Middleware",
+        "GraphQL",
+        "Cypress",
+        "Image Optimization",
+        "Font Optimization",
+        "Xstate"
+      ]
+    },
+    {
       "date": "March. 2023 ~ Now",
       "title": "B2B Saas API Platform (Asleep)",
       "role": "Backend Engineer",
