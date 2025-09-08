@@ -23,6 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <meta name="google-site-verification" content="NC7GcDou7AVKZfJeP30oZ-MJSVSrur3VS0Fkjfku9Ww" />
       </head>
       <body className={roboto.className}>{children}</body>
     </html>
