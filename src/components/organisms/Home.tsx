@@ -6,6 +6,7 @@ import { TypeAnimation } from "react-type-animation";
 import SouthIcon from "@mui/icons-material/South";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import { mixins, tokens } from "@/styles/theme";
 
 interface HomeInformationProps {
   job: string;
@@ -74,17 +75,7 @@ function HomeInformation({ job, name, tagline, mantras }: HomeInformationProps) 
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <Box
-            sx={{
-              fontSize: "0.8125rem",
-              fontWeight: 700,
-              letterSpacing: "0.35em",
-              textTransform: "uppercase",
-              color: "#5EEAD4",
-            }}
-          >
-            {job}
-          </Box>
+          <Box sx={mixins.eyebrow}>{job}</Box>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -95,7 +86,7 @@ function HomeInformation({ job, name, tagline, mantras }: HomeInformationProps) 
             variant={"h1"}
             sx={{
               marginTop: "1rem",
-              color: "#fff8ee",
+              color: tokens.color.textStrong,
               fontWeight: 700,
               fontSize: "clamp(3rem, 8vw, 5.5rem)",
             }}
@@ -112,7 +103,7 @@ function HomeInformation({ job, name, tagline, mantras }: HomeInformationProps) 
             sx={{
               marginTop: "1.25rem",
               fontSize: "clamp(1rem, 2.5vw, 1.375rem)",
-              color: "#cbd5e1",
+              color: tokens.color.textBody,
             }}
           >
             {tagline}
@@ -125,9 +116,7 @@ function HomeInformation({ job, name, tagline, mantras }: HomeInformationProps) 
             fontSize: "clamp(0.9375rem, 2.2vw, 1.125rem)",
             fontWeight: 700,
             letterSpacing: "0.02em",
-            background: "linear-gradient(45deg, #38bdf8, #00ff95)",
-            backgroundClip: "text",
-            color: "transparent",
+            ...mixins.gradientText,
           }}
         >
           <TypeAnimation
@@ -168,11 +157,11 @@ function HomeInformation({ job, name, tagline, mantras }: HomeInformationProps) 
             display: "flex",
             background: "none",
             fontSize: "inherit",
-            color: "#94a3b8",
-            transition: "color 0.3s ease, filter 0.3s ease",
+            color: tokens.color.textMuted,
+            transition: `color ${tokens.transition.hover}, filter ${tokens.transition.hover}`,
             "&:hover": {
-              color: "#5EEAD4",
-              filter: "drop-shadow(0 0 10px rgba(94, 234, 212, 0.6))",
+              color: tokens.color.accent,
+              filter: tokens.glow.icon,
             },
           }}
         >
@@ -218,7 +207,7 @@ function HomeInformation({ job, name, tagline, mantras }: HomeInformationProps) 
             zIndex: -1,
             pointerEvents: "none",
             borderRadius: "50%",
-            border: "1px dashed rgba(94, 234, 212, 0.14)",
+            border: `1px dashed ${tokens.color.orbitLineFaint}`,
             animation: `orbit-spin ${ring.duration}s linear infinite${
               ring.reverse ? " reverse" : ""
             }`,
@@ -236,8 +225,8 @@ function HomeInformation({ job, name, tagline, mantras }: HomeInformationProps) 
               width: "7px",
               height: "7px",
               borderRadius: "50%",
-              background: "linear-gradient(45deg, #38bdf8, #00ff95)",
-              boxShadow: "0 0 10px rgba(94, 234, 212, 0.7)",
+              background: tokens.gradient.accent,
+              boxShadow: tokens.glow.node,
             }}
           />
         </Box>
@@ -255,7 +244,7 @@ function HomeInformation({ job, name, tagline, mantras }: HomeInformationProps) 
             zIndex: -1,
             pointerEvents: "none",
             borderRadius: "50%",
-            backgroundColor: "#E2E8F0",
+            backgroundColor: tokens.color.textChip,
             animation: `twinkle 3.6s ease-in-out ${star.delay}s infinite`,
             "@media (prefers-reduced-motion: reduce)": {
               animation: "none",

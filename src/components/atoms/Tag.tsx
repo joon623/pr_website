@@ -1,4 +1,5 @@
 import { Box } from "@mui/system";
+import { tokens } from "@/styles/theme";
 
 interface TagProps {
   name: string;
@@ -11,9 +12,9 @@ function Tag({ name }: TagProps) {
       sx={{
         fontSize: "0.75rem",
         padding: "0.725rem",
-        bgcolor: "rgba(45,212,191,.3)",
-        borderRadius: "9999px",
-        color: "#5EEAD4",
+        bgcolor: tokens.color.surfaceTag,
+        borderRadius: tokens.radius.pill,
+        color: tokens.color.accent,
         display: "inline-block",
       }}
     >

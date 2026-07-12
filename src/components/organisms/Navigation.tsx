@@ -5,11 +5,10 @@ import ReorderIcon from "@mui/icons-material/Reorder";
 import { Box } from "@mui/system";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { themeStyles } from "@/styles/theme";
+import { tokens } from "@/styles/theme";
 import { Navigations, NavigationType } from "@/shared/navigations";
 import { useMediaQuery } from "@mui/material";
 import { mediaQueryInput } from "@/styles/breakpoint";
-import { v4 } from "uuid";
 
 const NAVIGATION_PADDING = "12px";
 
@@ -34,7 +33,7 @@ function Navigation() {
             {Navigations.map(({ name, color }: NavigationType) => {
               return (
                 <Box
-                  key={v4()}
+                  key={name}
                   sx={{
                     display: "flex",
                     justifyContent: "center",
@@ -59,7 +58,7 @@ function Navigation() {
         {Navigations.map(({ name }: NavigationType) => {
           return (
             <Box
-              key={v4()}
+              key={name}
               sx={{
                 display: "flex",
                 justifyContent: "center",
@@ -99,13 +98,13 @@ function Navigation() {
           width: "100%",
         }}
       >
-        <motion.div whileHover={{ scale: themeStyles.scales.hover }}>
+        <motion.div whileHover={{ scale: tokens.scale.hover }}>
           <HomeRoundedIcon />
         </motion.div>
         {matches ? (
           getLargeMenu()
         ) : (
-          <motion.div whileHover={{ scale: themeStyles.scales.hover }}>
+          <motion.div whileHover={{ scale: tokens.scale.hover }}>
             <ReorderIcon onClick={() => setClicked(!clicked)} />
           </motion.div>
         )}

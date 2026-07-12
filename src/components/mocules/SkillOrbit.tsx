@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Box } from "@mui/system";
 import { motion } from "framer-motion";
+import { mixins, tokens } from "@/styles/theme";
 
 interface SkillOrbitProps {
   skills: { category: string; items: string[] }[];
@@ -17,17 +18,11 @@ const RINGS = [
 ];
 
 const chipSx = {
-  whiteSpace: "nowrap",
-  padding: "5px 12px",
-  borderRadius: "9999px",
-  fontSize: "0.75rem",
-  color: "#E2E8F0",
-  backgroundColor: "rgba(15, 23, 42, 0.85)",
-  border: "1px solid rgba(94, 234, 212, 0.35)",
-  transition: "border-color 0.3s ease, box-shadow 0.3s ease",
+  ...mixins.chip,
+  transition: `border-color ${tokens.transition.hover}, box-shadow ${tokens.transition.hover}`,
   "&:hover": {
-    borderColor: "#5EEAD4",
-    boxShadow: "0 0 16px rgba(94, 234, 212, 0.4)",
+    borderColor: tokens.color.accent,
+    boxShadow: tokens.glow.chip,
   },
 };
 
@@ -85,8 +80,7 @@ function SkillOrbit({ skills }: SkillOrbitProps) {
               width: "130px",
               height: "130px",
               borderRadius: "50%",
-              background:
-                "radial-gradient(circle, rgba(56, 189, 248, 0.28) 0%, rgba(0, 255, 149, 0.1) 55%, transparent 72%)",
+              background: tokens.gradient.heroCore,
             }}
           />
           {skills.map((skill, ringIndex) => {
@@ -103,7 +97,7 @@ function SkillOrbit({ skills }: SkillOrbitProps) {
                     width: `${ring.radius * 2}px`,
                     height: `${ring.radius * 2}px`,
                     borderRadius: "50%",
-                    border: "1px dashed rgba(94, 234, 212, 0.18)",
+                    border: `1px dashed ${tokens.color.orbitLine}`,
                   }}
                 />
                 {/* category label floated clear of the orbit line */}
@@ -115,11 +109,7 @@ function SkillOrbit({ skills }: SkillOrbitProps) {
                     transform: "translate(-50%, -50%)",
                     zIndex: 3,
                     padding: "2px 12px",
-                    fontSize: "0.6875rem",
-                    fontWeight: 700,
-                    letterSpacing: "0.25em",
-                    textTransform: "uppercase",
-                    color: "#5EEAD4",
+                    ...mixins.orbitLabel,
                     backgroundColor: "#000",
                   }}
                 >

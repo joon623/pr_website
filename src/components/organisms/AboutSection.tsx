@@ -2,7 +2,7 @@
 
 import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
-import { themeStyles } from "@/styles/theme";
+import { tokens } from "@/styles/theme";
 import { useRef } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
@@ -54,8 +54,7 @@ const AboutSection = ({ title, content }: AboutSectionProps) => {
               transformOrigin: "top",
               width: "100%",
               height: "100%",
-              background:
-                "linear-gradient(180deg, rgba(94, 234, 212, 0.02), rgba(94, 234, 212, 0.55))",
+              background: tokens.gradient.thread,
             }}
           />
           <motion.div
@@ -67,8 +66,8 @@ const AboutSection = ({ title, content }: AboutSectionProps) => {
               width: "7px",
               height: "7px",
               borderRadius: "50%",
-              background: "linear-gradient(45deg, #38bdf8, #00ff95)",
-              boxShadow: "0 0 12px rgba(94, 234, 212, 0.8)",
+              background: tokens.gradient.accent,
+              boxShadow: tokens.glow.dot,
             }}
           />
         </Box>
@@ -94,7 +93,7 @@ const AboutSection = ({ title, content }: AboutSectionProps) => {
           </Typography>
           <Typography
             sx={{
-              color: themeStyles.color.primary.floralWhite,
+              color: tokens.color.textStrong,
               maxWidth: "560px",
               lineHeight: 1.8,
             }}

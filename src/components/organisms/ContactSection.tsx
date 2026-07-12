@@ -5,6 +5,7 @@ import { Typography } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { motion } from "framer-motion";
+import { mixins, tokens } from "@/styles/theme";
 
 interface ContactSectionProps {
   email: string;
@@ -17,15 +18,15 @@ const socialLinkSx = {
   alignItems: "center",
   gap: "0.5rem",
   padding: "10px 20px",
-  borderRadius: "9999px",
-  border: "1px solid rgba(148, 163, 184, 0.25)",
-  color: "#cbd5e1",
+  borderRadius: tokens.radius.pill,
+  border: `1px solid ${tokens.color.borderMuted}`,
+  color: tokens.color.textBody,
   fontSize: "0.875rem",
-  transition: "border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease",
+  transition: `border-color ${tokens.transition.hover}, color ${tokens.transition.hover}, box-shadow ${tokens.transition.hover}`,
   "&:hover": {
-    borderColor: "#5EEAD4",
-    color: "#5EEAD4",
-    boxShadow: "0 0 16px rgba(94, 234, 212, 0.25)",
+    borderColor: tokens.color.accent,
+    color: tokens.color.accent,
+    boxShadow: tokens.glow.social,
   },
 };
 
@@ -56,7 +57,7 @@ function ContactSection({ email, linkedIn, gitHub }: ContactSectionProps) {
           zIndex: -1,
           pointerEvents: "none",
           borderRadius: "50%",
-          border: "1px dashed rgba(94, 234, 212, 0.12)",
+          border: `1px dashed ${tokens.color.orbitLineFaint}`,
           "@media (prefers-reduced-motion: no-preference)": {
             animation: "orbit-spin 140s linear infinite",
           },
@@ -68,23 +69,13 @@ function ContactSection({ email, linkedIn, gitHub }: ContactSectionProps) {
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
       >
-        <Box
-          sx={{
-            fontSize: "0.8125rem",
-            fontWeight: 700,
-            letterSpacing: "0.35em",
-            textTransform: "uppercase",
-            color: "#5EEAD4",
-          }}
-        >
-          Contact
-        </Box>
+        <Box sx={mixins.eyebrow}>Contact</Box>
         <Typography
           variant={"h3"}
           sx={{
             marginTop: "1.25rem",
             fontWeight: 700,
-            color: "#fff8ee",
+            color: tokens.color.textStrong,
             fontSize: "clamp(1.75rem, 5vw, 2.75rem)",
           }}
         >
@@ -95,7 +86,7 @@ function ContactSection({ email, linkedIn, gitHub }: ContactSectionProps) {
             margin: "1.25rem auto 0",
             maxWidth: "480px",
             lineHeight: 1.8,
-            color: "#94a3b8",
+            color: tokens.color.textMuted,
             fontSize: "0.9375rem",
           }}
         >
@@ -114,16 +105,15 @@ function ContactSection({ email, linkedIn, gitHub }: ContactSectionProps) {
               alignItems: "center",
               gap: "0.625rem",
               padding: "16px 40px",
-              borderRadius: "9999px",
-              border: "1px solid rgba(94, 234, 212, 0.45)",
-              color: "#5EEAD4",
+              borderRadius: tokens.radius.pill,
+              border: `1px solid ${tokens.color.borderAccent}`,
+              color: tokens.color.accent,
               fontWeight: 700,
               fontSize: "1rem",
-              transition:
-                "background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease",
+              transition: `background-color ${tokens.transition.hover}, box-shadow ${tokens.transition.hover}, transform ${tokens.transition.hover}`,
               "&:hover": {
-                backgroundColor: "rgba(94, 234, 212, 0.08)",
-                boxShadow: "0 0 28px rgba(94, 234, 212, 0.3)",
+                backgroundColor: tokens.color.surfaceAccentHover,
+                boxShadow: tokens.glow.cta,
                 transform: "translateY(-2px)",
               },
             }}
@@ -165,7 +155,7 @@ function ContactSection({ email, linkedIn, gitHub }: ContactSectionProps) {
             marginTop: "4.5rem",
             fontSize: "0.75rem",
             letterSpacing: "0.08em",
-            color: "#475569",
+            color: tokens.color.textDim,
           }}
         >
           박남준 · Software Engineer

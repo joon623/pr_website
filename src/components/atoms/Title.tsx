@@ -1,4 +1,5 @@
 import { Typography } from "@mui/material";
+import { tokens } from "@/styles/theme";
 
 interface TitleProps {
   title: string;
@@ -6,7 +7,10 @@ interface TitleProps {
 
 function Title({ title }: TitleProps) {
   return (
-    <Typography variant={"h2"} sx={{ color: "#fff8ee", whiteSpace: "pre" }}>
+    <Typography
+      variant={"h2"}
+      sx={{ color: tokens.color.textStrong, whiteSpace: "pre" }}
+    >
       {title}
     </Typography>
   );

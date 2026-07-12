@@ -5,6 +5,7 @@ import { Box } from "@mui/system";
 import { mediaQueryInput } from "@/styles/breakpoint";
 import Title from "@/components/atoms/Title";
 import { WorkCard } from "@/components/mocules";
+import { tokens } from "@/styles/theme";
 
 interface WorkExperiencesProps {
   experiences: {
@@ -54,8 +55,7 @@ function WorkExperiences({ experiences }: WorkExperiencesProps) {
             bottom: "1rem",
             left: "1rem",
             width: "1px",
-            background:
-              "linear-gradient(180deg, rgba(94, 234, 212, 0.45), rgba(94, 234, 212, 0.05))",
+            background: tokens.gradient.timeline,
           },
         }}
       >

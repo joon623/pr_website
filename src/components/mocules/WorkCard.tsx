@@ -4,6 +4,7 @@ import { MouseEvent, useRef } from "react";
 import { Box } from "@mui/system";
 import Tag from "@/components/atoms/Tag";
 import { motion, useMotionValue, useSpring } from "framer-motion";
+import { mixins, tokens } from "@/styles/theme";
 
 interface Highlight {
   value: string;
@@ -85,8 +86,8 @@ function WorkCard({
             width: "11px",
             height: "11px",
             borderRadius: "50%",
-            background: "linear-gradient(45deg, #38bdf8, #00ff95)",
-            boxShadow: "0 0 12px rgba(94, 234, 212, 0.6)",
+            background: tokens.gradient.accent,
+            boxShadow: tokens.glow.node,
           }}
         />
         <motion.div
@@ -102,13 +103,13 @@ function WorkCard({
           <Box
             sx={{
               padding: "2rem",
-              borderRadius: "16px",
-              border: "1px solid rgba(94, 234, 212, 0.15)",
-              backgroundColor: "rgba(15, 23, 42, 0.35)",
-              transition: "border-color 0.3s ease, box-shadow 0.3s ease",
+              borderRadius: tokens.radius.card,
+              border: `1px solid ${tokens.color.borderAccentFaint}`,
+              backgroundColor: tokens.color.surfaceCard,
+              transition: `border-color ${tokens.transition.hover}, box-shadow ${tokens.transition.hover}`,
               "&:hover": {
-                borderColor: "rgba(94, 234, 212, 0.4)",
-                boxShadow: "0 12px 40px rgba(94, 234, 212, 0.08)",
+                borderColor: tokens.color.borderAccent,
+                boxShadow: tokens.glow.card,
               },
             }}
           >
@@ -123,18 +124,28 @@ function WorkCard({
             }}
           >
             <Box
-              sx={{ fontSize: "1.375rem", fontWeight: 700, color: "#fff8ee" }}
+              sx={{
+                fontSize: "1.375rem",
+                fontWeight: 700,
+                color: tokens.color.textStrong,
+              }}
             >
               {title}
             </Box>
-            <Box sx={{ fontSize: "0.875rem", fontWeight: 500, color: "#5EEAD4" }}>
+            <Box
+              sx={{
+                fontSize: "0.875rem",
+                fontWeight: 500,
+                color: tokens.color.accent,
+              }}
+            >
               {role}
             </Box>
             <Box
               sx={{
                 marginLeft: "auto",
                 fontSize: "0.8125rem",
-                color: "#64748B",
+                color: tokens.color.textFaint,
               }}
             >
               {date}
@@ -158,11 +169,9 @@ function WorkCard({
               <motion.div key={highlight.label} variants={popItem}>
                 <Box
                   sx={{
+                    ...mixins.gradientText,
                     fontSize: "1.25rem",
                     fontWeight: 700,
-                    background: "linear-gradient(45deg, #38bdf8, #00ff95)",
-                    backgroundClip: "text",
-                    color: "transparent",
                     whiteSpace: "nowrap",
                   }}
                 >
@@ -172,7 +181,7 @@ function WorkCard({
                   sx={{
                     marginTop: "0.25rem",
                     fontSize: "0.75rem",
-                    color: "#94a3b8",
+                    color: tokens.color.textMuted,
                   }}
                 >
                   {highlight.label}
@@ -186,8 +195,8 @@ function WorkCard({
             sx={{
               marginTop: "1.25rem",
               paddingTop: "1.25rem",
-              borderTop: "1px solid rgba(148, 163, 184, 0.15)",
-              color: "#94a4b8",
+              borderTop: `1px solid ${tokens.color.divider}`,
+              color: tokens.color.textMuted,
               fontSize: ".875rem",
               lineHeight: 1.7,
               "& ul": { paddingLeft: "1.25rem" },
