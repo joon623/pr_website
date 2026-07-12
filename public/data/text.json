@@ -1,160 +1,89 @@
 {
   "homeTop": {
-    "job": "Software engineer",
+    "job": "Frontend Engineer",
     "name": "Jun"
   },
   "about": {
-    "title": "\"Habit is life, and attitude is everything.\"",
-    "content": "I quickly develop and solve problems by any means for business success. I sacrifice for the team to produce results. Even at the beginning, I swiftly learn and immediately apply it to work."
+    "title": "\"기술 개선이 비즈니스 성과로 이어질 때 가장 몰입합니다.\"",
+    "content": "B2C 웹 서비스부터 B2B SaaS, 운영 어드민까지 설계·개발해 온 프론트엔드 엔지니어입니다. 현재는 작은 팀에서 프론트엔드를 리드하며 제품과 기술 기반을 같이 만들어가고 있습니다. 상품 구조 통합으로 신규 상품 출시 과정을 단순화하고(350→150페이지), 두 회사에 걸쳐 인프라 비용 연 5천만 원 이상을 절감했으며, LCP P75를 1.9초→1.1초로 개선했습니다. 필요하면 GraphQL·BFF·AWS 인프라 등 경계 밖 기술도 직접 익혀 풀어왔습니다. 코드만으로 풀리지 않는 문제는 사람과 함께 풉니다."
   },
   "experiences": [
     {
-      "date": "March. 2024 ~ Now",
-      "title": "Tax Refund Service Maintenance and Development (Z ENTERPRISE)",
-      "role": "Frontend Engineer",
+      "date": "2025.10 ~ 현재",
+      "title": "피클플러스",
+      "role": "Frontend Lead — 프론트엔드 기술 전략과 제품 개발 리드",
       "content": [
-        "Improved operational environment by automating Continuous Integration tests using Github Action and Husky.",
-        "Enhanced automated deployment systems utilizing Lambda and Event Bridge.",
-        "Established monitoring systems with Datadog Error Alert and Real User Monitoring.",
-        "Implemented a non-deployment service check page using Edge Config and Middleware.",
-        "Conducted A/B testing to optimize service features.",
-        "Set up an independent testing environment increasing Test Coverage from 0% to 30%.",
-        "Enabled API-independent environment through GraphQL Mocking and transitioned from MSW to Cypress Intercept.",
-        "Minimized flaky tests to improve reliability.",
-        "Enhanced Core Web Vitals metrics, focusing on LCP improvement through Image and Font Optimization.",
-        "Upgraded legacy design systems and maintained Xstate.",
-        "Managed large-scale traffic promotions by separating Service FE and Promotion FE servers.",
-        "Developed a waiting logic for managing DB connections during high traffic."
+        "상품마다 상세·결제 페이지가 개별 제작되어 페이지가 무한 증식하던 구조를 진단, 기획·디자인·백엔드와 상품 도메인의 공통 언어와 모델을 합의해 흩어진 퍼널을 통합 → 350 → 150페이지(57% 감소), 빌드 시간 1분+ 단축, 신규 상품 출시가 '페이지 개발'에서 '데이터 등록' 수준으로 단순화",
+        "무효화되어 있던 CloudFront 캐시 히트율 0% → 85% 재설계로 오리진 서버 부하를 줄여 서비스 전체 서버 비용 연 2,000만 원 이상 절감",
+        "HTTP/3 도입과 LCP 요소 AVIF 변환·캐싱으로 LCP P75 1.9초 → 1.1초 달성",
+        "규칙 없이 S3에 쌓이던 정적 에셋의 네이밍·폴더 컨벤션을 정립하고 시각화 도구(Asset-Center) 제작 → 디자이너·운영자가 직접 에셋을 관리하는 셀프서비스 구조 확립",
+        "3개+ 분산 레포를 모노레포로 통합, 공통 모듈을 npm 패키지로 버저닝해 변경 전파로 인한 장애를 구조적으로 차단, UI 일관성을 위한 디자인 시스템 구축 진행 중"
       ],
       "tags": [
         "Next.js",
-        "Relay",
-        "Github Action",
-        "AWS Lambda",
-        "Event Bridge",
-        "Datadog",
-        "Edge Config",
-        "Middleware",
+        "TypeScript",
+        "Tanstack Query",
+        "Zustand",
+        "Playwright"
+      ]
+    },
+    {
+      "date": "2025.06 ~ 2025.10",
+      "title": "화해글로벌",
+      "role": "Frontend Engineer",
+      "content": [
+        "커머스 웹뷰 레거시 코드(Scss, Axios)를 Tanstack Query·Tailwind로 점진적 이관, 비즈니스 로직과 UI를 분리해 신규 코드베이스와 공존 가능한 구조로 전환",
+        "찜하기 목록에 Virtual Windowing 도입으로 대용량 리스트 크래시 해결, 불필요한 SSR을 SSG로 전환해 서버 부하·렌더링 개선",
+        "20개+ 이벤트 페이지를 통합 관리하는 화해위크 기획전 어드민 구축(재사용 컴포넌트 7개+), React Hook Form + Zod로 런타임 타입 안정성 확보",
+        "Orval API 타입 자동화, Overlay 기반 Modal 표준화, Suspense/ErrorBoundary 도입 — 반복 문제를 구조로 해결"
+      ],
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "Tanstack Query",
+        "React Hook Form",
+        "Zod",
+        "Jotai",
+        "Jest"
+      ]
+    },
+    {
+      "date": "2024.03 ~ 2025.05",
+      "title": "지엔터프라이즈",
+      "role": "Frontend Engineer",
+      "content": [
+        "클라이언트에서 실험 그룹을 결정하던 레거시 A/B 테스트 SDK(2초+ 레이턴시)를 Next.js Middleware 서버 분기로 이전 → 실험 환경을 유지하며 LCP 3초 → 1.3초",
+        "Vercel 밴드위스 비용 급증을 발견, S3 + CloudFront 전환으로 80%+ 절감(연 3천만 원+)",
+        "디자이너가 직접 이미지를 업로드·최적화(WebP/AVIF, 1MB→20KB)하는 대시보드 제작으로 개발 리소스 약 3주 절감",
+        "수백 개 입력 페이지의 전환 흐름을 선언적으로 정의하는 퍼널 모듈 제작 → 흐름 가시성·디버깅·테스트 효율 향상",
+        "Shadcn UI 기반 디자인 시스템 재구축, Playwright E2E를 Flaky Test Zero 원칙으로 CI에 통합해 머지 전 자동 검증 체계 확립"
+      ],
+      "tags": [
+        "Next.js",
+        "TypeScript",
         "GraphQL",
-        "Cypress",
-        "Image Optimization",
-        "Font Optimization",
-        "Xstate"
+        "Relay",
+        "Jotai",
+        "Playwright",
+        "Vercel"
       ]
     },
     {
-      "date": "March. 2023 ~ Now",
-      "title": "B2B Saas API Platform (Asleep)",
-      "role": "Backend Engineer",
+      "date": "2020.11 ~ 2024.02",
+      "title": "에이슬립",
+      "role": "Frontend Engineer — 시드 단계 합류, 90명 규모까지 성장",
       "content": [
-        "Developed Dashboard APIs offering metrics like DAU, MAU, and Stickiness, resolving cross-domain service calls via BFF implementation.",
-        "Introduced consistent code conventions through DDD adoption (Hexagonal Architecture, Layered Architecture), along with comprehensive Integration and Unit testing.",
-        "Automated Cloud Infra management using AWS CDK and established a MonoRepo.",
-        "Provided Swagger Docs and standardized ubiquitous language.",
-        "Implemented automated deletion of information for approximately 100,000 departed members using Jenkins for batch automation and monitoring.",
-        "Created an API Usage Alert service automating usage checks and sending warning emails using Jenkins and AWS SES.",
-        "Configured email templates and set up Slack notifications for health checks.",
-        "Developed an admin panel managing contracts, emails, and usage, enhancing architecture considering development effort by utilizing GraphQL for communication among MSA services.",
-        "Implemented CI/CD pipelines using Github Action, integrated RBAC for user authorization via Cognito, and established offset-based Pagination, coupled with API Logging using Datadog.",
-        "Expedited development in Developer Mode by shortening sleep analysis feature development from a minimum of 20 minutes to 2 minutes by optimizing data storage speed without persistence using Redis."
+        "B2B SaaS 대시보드 — MSA API를 통합하는 BFF(GraphQL) 구축, Streaming SSR로 초기 로딩 개선, ROLE 기반 권한 어드민 설계, AWS CDK 배포 자동화",
+        "B2C 앱 웹뷰 — JS-Bridge 기반 네이티브 ↔ 웹뷰 통신 구현, Virtual Slides로 렌더링 병목 해결",
+        "CRA → Next.js 점진적 전환 주도로 LCP·SEO 개선",
+        "오픈소스 — react-jsx-control(React 선언적 조건부 렌더링), ant-invariant(불변 패턴 TS 유틸리티) 개발·운영"
       ],
       "tags": [
-        "FastAPI",
+        "React",
+        "TypeScript",
+        "GraphQL",
         "Python",
-        "Graphql",
-        "AWS",
-        "MySQL"
-      ]
-    },
-    {
-      "date": "Nov. 2022 ~ Feb. 2023",
-      "title": "B2B Saas Dashboard (Asleep)",
-      "role": "Frontend Engineer",
-      "content": [
-        "Enhancing initial loading speed",
-        "Implementing Streaming SSR",
-        "Optimizing JS bundle size using Server Components",
-        "Applying Next.js Middleware for improved functionality",
-        "Improving Authentication User Experience",
-        "Implementing Chakra UI Design System to streamline design resources",
-        "Introducing a Code Generator for efficiency",
-        "Utilizing Orval and Swagger",
-        "Designing and developing Email templates and Admin interfaces",
-        "Implementing BFF and GraphQL for enhanced service architecture."
-      ],
-      "tags": [
-        "Next.js",
-        "Typescript",
-        "TailwindCSS",
-        "Vercel",
-        "AWS",
-        "Graphql"
-      ]
-    },
-    {
-      "date": "March. 2022 ~ Nov. 2022",
-      "title": "B2C application for managing sleep habits (Asleep)",
-      "role": "Frontend Engineer",
-      "content": [
-        "Developing a web view for sleep habit management application reports",
-        "Enhancing Carousel performance",
-        "Implementing Virtual Slides",
-        "Incorporating multilingual support",
-        "Shifting Remote Config to SSR",
-        "Transitioning libraries: CRA to Next.js, AWS Amplify to Vercel, Styled-components to Styletron",
-        "Managing server state",
-        "Introducing React-query and Ky",
-        "Testing libraries: Cypress for E2E Testing, Testing Library for Component Testing",
-        "Establishing a Monorepo using Nx."
-      ],
-      "tags": [
-        "Next.js",
-        "Typescript",
-        "Styletron",
-        "Recoil",
-        "Cypress",
-        "Storybook"
-      ]
-    },
-    {
-      "date": "Nov. 2020 ~ March. 2023",
-      "title": "Developed and maintained the official website for A-Sleep (Asleep)",
-      "role": "Frontend Engineer",
-      "content": [
-        "Applying SSR, SSG, and ISR (incremental static regeneration)",
-        "Minimizing API calls for optimal performance",
-        "Improving initial loading speed",
-        "Utilizing Google Spreadsheet API",
-        "Cost-saving through Admin and API development strategies",
-        "Implementing Atomic Design patterns for component reusability",
-        "Conducting SEO operations such as Sitemap, Favicon, Open Graph protocol, and PWA integration",
-        "Implementing Scroll, Gesture, and layout animations using React-framer."
-      ],
-      "tags": [
-        "Next.js",
-        "Typescript",
-        "TailwindCSS",
-        "Amplify"
-      ]
-    },
-    {
-      "date": "April. 2020 ~ July. 2021",
-      "title": "Sleep analysis application based on AI analysis of sound data (Asleep)",
-      "role": "Android Engineer",
-      "content": [
-        "Set up Android technical environment and implemented all features.",
-        "Implemented background recording using Foreground Service.",
-        "File conversion of recordings using Mobile FFmpeg.",
-        "Implemented custom views using Canvas.",
-        "Enabled background music playback feature.",
-        "Error logging using Crashlytics."
-      ],
-      "tags": [
-        "Android",
-        "MVVM",
-        "CleanArchitecture",
-        "JetPack",
-        "Canvas"
+        "FastAPI"
       ]
     }
   ],

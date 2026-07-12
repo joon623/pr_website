@@ -29,35 +29,43 @@ function WorkCard({ date, title, role, content, tags }: WorkCardProps) {
       style={{ position: "relative", top: "80px" }}
     >
       <Box
-        display={matches ? "flex" : "auto"}
-        minHeight={matches ? "45vh" : "auto"}
-        marginBottom={"50px"}
-        justifyContent={"space-between"}
-        alignItems={"start"}
-        gap={"20px"}
+        sx={{
+          display: matches ? "flex" : "block",
+          minHeight: matches ? "45vh" : "auto",
+          marginBottom: "50px",
+          justifyContent: "space-between",
+          alignItems: "start",
+          gap: "20px",
+        }}
       >
         <Box
-          color={"#64748B"}
-          fontSize={"0.75rem"}
-          width={"max-content"}
-          flex={2}
+          sx={{
+            color: "#64748B",
+            fontSize: "0.75rem",
+            width: "max-content",
+            flex: 2,
+          }}
         >
           {date}
         </Box>
-        <Box color={"#E2E88F0"} flex={8}>
-          <Box marginTop={matches ? "0px" : "0.5rem"}>{title}</Box>
+        <Box sx={{ color: "#E2E8F0", flex: 8 }}>
+          <Box sx={{ marginTop: matches ? "0px" : "0.5rem" }}>{title}</Box>
           <Box
-            marginTop={matches ? "5px" : "0.5rem"}
-            color={"rgb(207, 204, 198)"}
-            fontSize={"12px"}
+            sx={{
+              marginTop: matches ? "5px" : "0.5rem",
+              color: "rgb(207, 204, 198)",
+              fontSize: "12px",
+            }}
           >
             {role}
           </Box>
           <Box
-            marginTop={"0.5rem"}
             component="div"
-            color={"#94a4b8"}
-            fontSize={".875rem"}
+            sx={{
+              marginTop: "0.5rem",
+              color: "#94a4b8",
+              fontSize: ".875rem",
+            }}
           >
             <ul>
               {content.map((item) => (
@@ -65,8 +73,8 @@ function WorkCard({ date, title, role, content, tags }: WorkCardProps) {
               ))}
             </ul>
           </Box>
-          <Box marginTop={"0.5rem"} />
-          <Box display={"flex"} gap={"0.75rem"} flexWrap={"wrap"}>
+          <Box sx={{ marginTop: "0.5rem" }} />
+          <Box sx={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
             {tags.map((tag) => (
               <Tag name={tag} key={v4()} />
             ))}

@@ -6,7 +6,7 @@ interface TitleProps {
 
 function Title({ title }: TitleProps) {
   return (
-    <Typography color={"#fff8ee"} variant={"h2"} whiteSpace={"pre"}>
+    <Typography variant={"h2"} sx={{ color: "#fff8ee", whiteSpace: "pre" }}>
       {title}
     </Typography>
   );

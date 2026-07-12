@@ -22,18 +22,22 @@ function WorkExperiences({ experiences }: WorkExperiencesProps) {
 
   return (
     <Box
-      padding={"300px 0px 100px"}
-      display={matches ? "flex" : "auto"}
-      gap={"3rem"}
       component={"section"}
+      sx={{
+        padding: "300px 0px 100px",
+        display: matches ? "flex" : "block",
+        gap: "3rem",
+      }}
     >
       <Box
-        position={matches ? "sticky" : "static"}
-        alignSelf={"flex-start"}
-        top={"6rem"}
-        display={"flex"}
-        justifyContent={"center"}
-        marginBottom={"1.5rem"}
+        sx={{
+          position: matches ? "sticky" : "static",
+          alignSelf: "flex-start",
+          top: "6rem",
+          display: "flex",
+          justifyContent: "center",
+          marginBottom: "1.5rem",
+        }}
       >
         <Title title={"Work\nExperience"} />
       </Box>

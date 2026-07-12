@@ -107,7 +107,9 @@ function SkillCircles({ items, centerItem, isSelected }: SkillCirclesProps) {
   };
 
   return (
-    <Box display={"flex"} justifyContent={"center"} marginTop={"20px"}>
+    <Box
+      sx={{ display: "flex", justifyContent: "center", marginTop: "20px" }}
+    >
       <Box style={containerStyle} ref={containerRef}>
         <Box style={centerCircleStyle}>{centerItem}</Box>
         {getSkillCircles()}

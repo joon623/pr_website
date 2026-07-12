@@ -35,11 +35,13 @@ function Navigation() {
               return (
                 <Box
                   key={v4()}
-                  display={"flex"}
-                  justifyContent={"center"}
-                  padding={"20px"}
-                  bgcolor={color}
-                  color={"black"}
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    padding: "20px",
+                    bgcolor: color,
+                    color: "black",
+                  }}
                 >
                   {name}
                 </Box>
@@ -53,15 +55,17 @@ function Navigation() {
 
   const getLargeMenu = () => {
     return (
-      <Box display={"flex"}>
+      <Box sx={{ display: "flex" }}>
         {Navigations.map(({ name }: NavigationType) => {
           return (
             <Box
               key={v4()}
-              display={"flex"}
-              justifyContent={"center"}
-              padding={"20px"}
-              color={"white"}
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                padding: "20px",
+                color: "white",
+              }}
             >
               {name}
             </Box>
@@ -74,22 +78,26 @@ function Navigation() {
   return (
     <Box
       component="nav"
-      position={"fixed"}
-      top={0}
-      right={0}
-      left={0}
-      padding={`${NAVIGATION_PADDING}`}
-      display={matches ? "flex" : "block"}
-      justifyContent={"center"}
-      zIndex={999}
+      sx={{
+        position: "fixed",
+        top: 0,
+        right: 0,
+        left: 0,
+        padding: NAVIGATION_PADDING,
+        display: matches ? "flex" : "block",
+        justifyContent: "center",
+        zIndex: 999,
+      }}
     >
       <Box
-        display={"flex"}
-        justifyContent={"space-between"}
-        alignItems={"center"}
-        padding={"12px"}
-        maxWidth={matches ? "1560px" : "auto"}
-        width={"100%"}
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "12px",
+          maxWidth: matches ? "1560px" : "none",
+          width: "100%",
+        }}
       >
         <motion.div whileHover={{ scale: themeStyles.scales.hover }}>
           <HomeRoundedIcon />

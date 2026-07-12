@@ -54,8 +54,8 @@ function SkillSection({ skills }: SkillSectionProps) {
   }, []);
 
   return (
-    <Box paddingBottom={"25rem"} component={"section"}>
-      <Box display={"flex"} justifyContent={"center"}>
+    <Box sx={{ paddingBottom: "25rem" }} component={"section"}>
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Title title={"Skills"} />
       </Box>
       <Box

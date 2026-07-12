@@ -15,27 +15,31 @@ interface HomeInformationProps {
 function HomeInformation({ job, name }: HomeInformationProps) {
   return (
     <Box
-      padding={"var(--global-padding-top) 1.5rem 1.5rem"}
-      height={"100vh"}
-      display={"flex"}
-      flexDirection={"column"}
-      alignItems={"center"}
-      justifyContent={"center"}
       component={"section"}
+      sx={{
+        padding: "var(--global-padding-top) 1.5rem 1.5rem",
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
     >
       <Box
-        display={"flex"}
-        flexDirection={"column"}
-        alignItems={"center"}
-        justifyContent={"center"}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
       >
-        <Typography variant={"h3"} gutterBottom color={"#fff8ee"}>
+        <Typography variant={"h3"} gutterBottom sx={{ color: "#fff8ee" }}>
           Hi there!
         </Typography>
-        <Typography variant={"h3"} gutterBottom color={"#fff8ee"}>
+        <Typography variant={"h3"} gutterBottom sx={{ color: "#fff8ee" }}>
           I am
         </Typography>
-        <Typography variant={"h2"} gutterBottom textAlign={"center"}>
+        <Typography variant={"h2"} gutterBottom sx={{ textAlign: "center" }}>
           <TypeAnimation
             sequence={[job, 2000, ""]}
             repeat={Infinity}
@@ -47,7 +51,7 @@ function HomeInformation({ job, name }: HomeInformationProps) {
             }}
           />
         </Typography>
-        <Typography variant={"h1"} gutterBottom color={"#fff8ee"}>
+        <Typography variant={"h1"} gutterBottom sx={{ color: "#fff8ee" }}>
           {name}
         </Typography>
       </Box>

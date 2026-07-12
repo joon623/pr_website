@@ -17,13 +17,15 @@ const AboutSection = ({ title, content }: AboutSectionProps) => {
 
   return (
     <Box
-      margin={"150px auto 0px"}
-      display={"flex"}
-      alignItems={"center"}
-      flexDirection={"column"}
-      height={"1200px"}
+      sx={{
+        margin: "150px auto 0px",
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "column",
+        height: "1200px",
+      }}
     >
-      <Box position={"sticky"} top={"50%"} ref={ref}>
+      <Box sx={{ position: "sticky", top: "50%" }} ref={ref}>
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -34,7 +36,7 @@ const AboutSection = ({ title, content }: AboutSectionProps) => {
           <Typography
             variant={"h5"}
             gutterBottom
-            textAlign={"center"}
+            sx={{ textAlign: "center" }}
             style={{
               background:
                 "linear-gradient(96.77deg, rgb(249, 106, 25) -0.96%, rgb(251, 96, 189) 100%)",
@@ -45,8 +47,10 @@ const AboutSection = ({ title, content }: AboutSectionProps) => {
             {title}
           </Typography>
           <Typography
-            color={themeStyles.color.primary.floralWhite}
-            maxWidth={"560px"}
+            sx={{
+              color: themeStyles.color.primary.floralWhite,
+              maxWidth: "560px",
+            }}
           >
             <TypeAnimation
               sequence={[content]}

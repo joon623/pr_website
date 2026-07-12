@@ -14,20 +14,22 @@ interface ContactSectionProps {
 function ContactSection({ email, linkedIn, gitHub }: ContactSectionProps) {
   return (
     <Box
-      display={"flex"}
-      flexDirection={"column"}
-      alignItems={"center"}
-      justifyContent={"center"}
-      padding={"20px"}
       component={"section"}
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "20px",
+      }}
     >
-      <Typography color={"#fff8ee"} variant={"h2"}>
+      <Typography variant={"h2"} sx={{ color: "#fff8ee" }}>
         Contact
       </Typography>
-      <Typography color={"#fff8ee"} variant={"h6"}>
+      <Typography variant={"h6"} sx={{ color: "#fff8ee" }}>
         {email}
       </Typography>
-      <Box marginTop={"20px"}>
+      <Box sx={{ marginTop: "20px" }}>
         <a href={`mailto:${email}`}>
           <button
             style={{
@@ -48,7 +50,7 @@ function ContactSection({ email, linkedIn, gitHub }: ContactSectionProps) {
           </button>
         </a>
       </Box>
-      <Box display={"flex"} gap={"15px"} marginTop={"15px"}>
+      <Box sx={{ display: "flex", gap: "15px", marginTop: "15px" }}>
         <a href={gitHub} target="_blank">
           <GitHubIcon />
         </a>
