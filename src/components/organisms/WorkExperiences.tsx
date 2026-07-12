@@ -4,7 +4,6 @@ import { useMediaQuery } from "@mui/material";
 import { Box } from "@mui/system";
 import { mediaQueryInput } from "@/styles/breakpoint";
 import Title from "@/components/atoms/Title";
-import { v4 } from "uuid";
 import { WorkCard } from "@/components/mocules";
 
 interface WorkExperiencesProps {
@@ -12,6 +11,7 @@ interface WorkExperiencesProps {
     date: string;
     title: string;
     role: string;
+    highlights: { value: string; label: string }[];
     content: string[];
     tags: string[];
   }[];
@@ -41,13 +41,31 @@ function WorkExperiences({ experiences }: WorkExperiencesProps) {
       >
         <Title title={"Work\nExperience"} />
       </Box>
-      <Box>
+      {/* timeline */}
+      <Box
+        sx={{
+          position: "relative",
+          flex: 1,
+          paddingLeft: "2.75rem",
+          "&::before": {
+            content: '""',
+            position: "absolute",
+            top: "1rem",
+            bottom: "1rem",
+            left: "1rem",
+            width: "1px",
+            background:
+              "linear-gradient(180deg, rgba(94, 234, 212, 0.45), rgba(94, 234, 212, 0.05))",
+          },
+        }}
+      >
         {experiences.map((work) => (
           <WorkCard
-            key={v4()}
+            key={work.title}
             role={work.role}
             date={work.date}
             title={work.title}
+            highlights={work.highlights}
             content={work.content}
             tags={work.tags}
           />

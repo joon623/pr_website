@@ -11,13 +11,14 @@ interface Experience {
   date: string;
   title: string;
   role: string;
+  highlights: { value: string; label: string }[];
   content: string[];
   tags: string[];
 }
 
 interface Skill {
   category: string;
-  images: string[];
+  items: string[];
 }
 
 interface Contact {
@@ -29,6 +30,8 @@ interface Contact {
 interface HomeTop {
   job: string;
   name: string;
+  tagline: string;
+  mantras: string[];
 }
 
 interface About {
@@ -53,7 +56,12 @@ export default async function HomeTemplate({
 }: HomeTemplateProps) {
   return (
     <Box className="root" component={"main"}>
-      <HomeComponent job={homeTop.job} name={homeTop.name} />
+      <HomeComponent
+        job={homeTop.job}
+        name={homeTop.name}
+        tagline={homeTop.tagline}
+        mantras={homeTop.mantras}
+      />
       <AboutSection title={about.title} content={about.content} />
       <WorkExperiences experiences={experiences} />
       <SkillSection skills={skills} />

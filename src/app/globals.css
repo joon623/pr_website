@@ -54,8 +54,13 @@ a {
 }
 
 
-html,
+html {
+    background: rgb(var(--background-start-rgb));
+    overflow-x: clip;
+}
+
 body {
+    overflow-x: clip;
 }
 
 body {
@@ -76,4 +81,23 @@ button {
 
 .root {
     padding: 1.5rem;
+}
+
+@keyframes orbit-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes twinkle {
+    0%,
+    100% {
+        opacity: 0.12;
+    }
+    50% {
+        opacity: 0.75;
+    }
 }

@@ -4,19 +4,53 @@ import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
 import { TypeAnimation } from "react-type-animation";
 import SouthIcon from "@mui/icons-material/South";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 
 interface HomeInformationProps {
   job: string;
   name: string;
+  tagline: string;
+  mantras: string[];
 }
 
-function HomeInformation({ job, name }: HomeInformationProps) {
+// 고정 좌표(랜덤 금지 — hydration mismatch 방지)
+const STARS = [
+  { top: "12%", left: "16%", size: 2, delay: 0 },
+  { top: "22%", left: "78%", size: 3, delay: 1.2 },
+  { top: "18%", left: "38%", size: 2, delay: 2.1 },
+  { top: "31%", left: "88%", size: 2, delay: 0.6 },
+  { top: "38%", left: "8%", size: 3, delay: 1.8 },
+  { top: "12%", left: "60%", size: 2, delay: 2.6 },
+  { top: "52%", left: "14%", size: 2, delay: 0.9 },
+  { top: "58%", left: "90%", size: 2, delay: 1.5 },
+  { top: "70%", left: "22%", size: 3, delay: 2.9 },
+  { top: "76%", left: "70%", size: 2, delay: 0.3 },
+  { top: "84%", left: "42%", size: 2, delay: 1.1 },
+  { top: "66%", left: "54%", size: 2, delay: 2.3 },
+  { top: "44%", left: "68%", size: 2, delay: 3.2 },
+  { top: "80%", left: "86%", size: 3, delay: 1.7 },
+];
+
+const HERO_RINGS = [
+  { size: 620, duration: 120, reverse: false },
+  { size: 980, duration: 200, reverse: true },
+];
+
+function HomeInformation({ job, name, tagline, mantras }: HomeInformationProps) {
+  // toss-style parallax: 스크롤 시 배경은 느리게, 콘텐츠는 떠오르며 페이드아웃
+  const { scrollY } = useScroll();
+  const backgroundY = useTransform(scrollY, [0, 800], [0, 160]);
+  const contentOpacity = useTransform(scrollY, [0, 520], [1, 0]);
+  const contentY = useTransform(scrollY, [0, 520], [0, -70]);
+
   return (
     <Box
       component={"section"}
       sx={{
+        position: "relative",
+        isolation: "isolate",
+        margin: "-1.5rem -1.5rem 0",
         padding: "var(--global-padding-top) 1.5rem 1.5rem",
         height: "100vh",
         display: "flex",
@@ -25,69 +59,210 @@ function HomeInformation({ job, name }: HomeInformationProps) {
         justifyContent: "center",
       }}
     >
-      <Box
-        sx={{
+      <motion.div
+        style={{
+          opacity: contentOpacity,
+          y: contentY,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          justifyContent: "center",
+          textAlign: "center",
         }}
       >
-        <Typography variant={"h3"} gutterBottom sx={{ color: "#fff8ee" }}>
-          Hi there!
-        </Typography>
-        <Typography variant={"h3"} gutterBottom sx={{ color: "#fff8ee" }}>
-          I am
-        </Typography>
-        <Typography variant={"h2"} gutterBottom sx={{ textAlign: "center" }}>
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <Box
+            sx={{
+              fontSize: "0.8125rem",
+              fontWeight: 700,
+              letterSpacing: "0.35em",
+              textTransform: "uppercase",
+              color: "#5EEAD4",
+            }}
+          >
+            {job}
+          </Box>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.15 }}
+        >
+          <Typography
+            variant={"h1"}
+            sx={{
+              marginTop: "1rem",
+              color: "#fff8ee",
+              fontWeight: 700,
+              fontSize: "clamp(3rem, 8vw, 5.5rem)",
+            }}
+          >
+            {name}
+          </Typography>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          <Typography
+            sx={{
+              marginTop: "1.25rem",
+              fontSize: "clamp(1rem, 2.5vw, 1.375rem)",
+              color: "#cbd5e1",
+            }}
+          >
+            {tagline}
+          </Typography>
+        </motion.div>
+        <Box
+          sx={{
+            marginTop: "2.75rem",
+            minHeight: "1.8em",
+            fontSize: "clamp(0.9375rem, 2.2vw, 1.125rem)",
+            fontWeight: 700,
+            letterSpacing: "0.02em",
+            background: "linear-gradient(45deg, #38bdf8, #00ff95)",
+            backgroundClip: "text",
+            color: "transparent",
+          }}
+        >
           <TypeAnimation
-            sequence={[job, 2000, ""]}
+            sequence={mantras.flatMap((mantra) => [mantra, 2400])}
+            speed={40}
+            deletionSpeed={70}
             repeat={Infinity}
             cursor={false}
-            style={{
-              color: "transparent",
-              background: "linear-gradient(45deg, #09009f, #00ff95 80%) text",
-              fontWeight: "bold",
-            }}
           />
-        </Typography>
-        <Typography variant={"h1"} gutterBottom sx={{ color: "#fff8ee" }}>
-          {name}
-        </Typography>
-      </Box>
+        </Box>
       <motion.div
         animate={{
-          y: 40,
+          y: 24,
         }}
         initial={{
           y: 0,
         }}
         transition={{
           repeat: Infinity,
-          duration: 2,
+          repeatType: "reverse",
+          duration: 1.2,
+          ease: "easeInOut",
         }}
         style={{
           display: "flex",
           justifyContent: "center",
-          fontSize: "70px",
-          marginTop: "50px",
+          fontSize: "44px",
+          marginTop: "64px",
         }}
       >
-        <SouthIcon fontSize="inherit" />
+        <Box
+          component="button"
+          aria-label="다음 섹션으로 스크롤"
+          onClick={() =>
+            window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
+          }
+          sx={{
+            display: "flex",
+            background: "none",
+            fontSize: "inherit",
+            color: "#94a3b8",
+            transition: "color 0.3s ease, filter 0.3s ease",
+            "&:hover": {
+              color: "#5EEAD4",
+              filter: "drop-shadow(0 0 10px rgba(94, 234, 212, 0.6))",
+            },
+          }}
+        >
+          <SouthIcon fontSize="inherit" />
+        </Box>
       </motion.div>
-      <Image
-        src={"/images/bg1.jpg"}
-        alt={"bg-image"}
-        quality={100}
-        fill
-        sizes="100vw"
+      </motion.div>
+      <motion.div
         style={{
-          objectFit: "cover",
-          opacity: 0.3,
+          y: backgroundY,
+          scale: 1.12,
+          position: "absolute",
+          inset: 0,
           zIndex: -1,
+          pointerEvents: "none",
         }}
-        priority
-      />
+      >
+        <Image
+          src={"/images/bg1.jpg"}
+          alt={"bg-image"}
+          quality={100}
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover",
+            opacity: 0.3,
+          }}
+          priority
+        />
+      </motion.div>
+      {/* ambient orbit rings behind the headline */}
+      {HERO_RINGS.map((ring) => (
+        <Box
+          key={ring.size}
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            width: `${ring.size}px`,
+            height: `${ring.size}px`,
+            marginTop: `${-ring.size / 2}px`,
+            marginLeft: `${-ring.size / 2}px`,
+            zIndex: -1,
+            pointerEvents: "none",
+            borderRadius: "50%",
+            border: "1px dashed rgba(94, 234, 212, 0.14)",
+            animation: `orbit-spin ${ring.duration}s linear infinite${
+              ring.reverse ? " reverse" : ""
+            }`,
+            "@media (prefers-reduced-motion: reduce)": {
+              animation: "none",
+            },
+          }}
+        >
+          {/* planet dot riding the ring */}
+          <Box
+            sx={{
+              position: "absolute",
+              top: "-3px",
+              left: "50%",
+              width: "7px",
+              height: "7px",
+              borderRadius: "50%",
+              background: "linear-gradient(45deg, #38bdf8, #00ff95)",
+              boxShadow: "0 0 10px rgba(94, 234, 212, 0.7)",
+            }}
+          />
+        </Box>
+      ))}
+      {/* twinkling stars */}
+      {STARS.map((star) => (
+        <Box
+          key={`${star.top}-${star.left}`}
+          sx={{
+            position: "absolute",
+            top: star.top,
+            left: star.left,
+            width: `${star.size}px`,
+            height: `${star.size}px`,
+            zIndex: -1,
+            pointerEvents: "none",
+            borderRadius: "50%",
+            backgroundColor: "#E2E8F0",
+            animation: `twinkle 3.6s ease-in-out ${star.delay}s infinite`,
+            "@media (prefers-reduced-motion: reduce)": {
+              animation: "none",
+            },
+          }}
+        />
+      ))}
     </Box>
   );
 }

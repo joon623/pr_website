@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 
-const roboto = Roboto({
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
+const notoSansKr = Noto_Sans_KR({
+  weight: ["400", "500", "700"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -25,7 +24,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta name="google-site-verification" content="NC7GcDou7AVKZfJeP30oZ-MJSVSrur3VS0Fkjfku9Ww" />
       </head>
-      <body className={roboto.className}>{children}</body>
+      <body className={notoSansKr.className}>{children}</body>
     </html>
   );
 }

@@ -1,10 +1,16 @@
 {
   "homeTop": {
-    "job": "Frontend Engineer",
-    "name": "Jun"
+    "job": "Software Engineer",
+    "name": "박남준",
+    "tagline": "기술 개선이 비즈니스 성과로 이어질 때 가장 몰입합니다",
+    "mantras": [
+      "어제의 최선을 오늘 다시 넘어섭니다",
+      "경계 밖의 기술도 직접 익혀 풉니다",
+      "더 어려운 문제를 찾아 계속 나아갑니다"
+    ]
   },
   "about": {
-    "title": "\"기술 개선이 비즈니스 성과로 이어질 때 가장 몰입합니다.\"",
+    "title": "\"코드만으로 풀리지 않는 문제는 사람과 함께 풉니다.\"",
     "content": "B2C 웹 서비스부터 B2B SaaS, 운영 어드민까지 설계·개발해 온 프론트엔드 엔지니어입니다. 현재는 작은 팀에서 프론트엔드를 리드하며 제품과 기술 기반을 같이 만들어가고 있습니다. 상품 구조 통합으로 신규 상품 출시 과정을 단순화하고(350→150페이지), 두 회사에 걸쳐 인프라 비용 연 5천만 원 이상을 절감했으며, LCP P75를 1.9초→1.1초로 개선했습니다. 필요하면 GraphQL·BFF·AWS 인프라 등 경계 밖 기술도 직접 익혀 풀어왔습니다. 코드만으로 풀리지 않는 문제는 사람과 함께 풉니다."
   },
   "experiences": [
@@ -12,6 +18,11 @@
       "date": "2025.10 ~ 현재",
       "title": "피클플러스",
       "role": "Frontend Lead — 프론트엔드 기술 전략과 제품 개발 리드",
+      "highlights": [
+        { "value": "350 → 150", "label": "상품 페이지 통합 (57% 감소)" },
+        { "value": "0% → 85%", "label": "CloudFront 캐시 히트율" },
+        { "value": "연 2,000만 원+", "label": "서버 비용 절감" }
+      ],
       "content": [
         "상품마다 상세·결제 페이지가 개별 제작되어 페이지가 무한 증식하던 구조를 진단, 기획·디자인·백엔드와 상품 도메인의 공통 언어와 모델을 합의해 흩어진 퍼널을 통합 → 350 → 150페이지(57% 감소), 빌드 시간 1분+ 단축, 신규 상품 출시가 '페이지 개발'에서 '데이터 등록' 수준으로 단순화",
         "무효화되어 있던 CloudFront 캐시 히트율 0% → 85% 재설계로 오리진 서버 부하를 줄여 서비스 전체 서버 비용 연 2,000만 원 이상 절감",
@@ -31,6 +42,11 @@
       "date": "2025.06 ~ 2025.10",
       "title": "화해글로벌",
       "role": "Frontend Engineer",
+      "highlights": [
+        { "value": "Virtual Windowing", "label": "대용량 리스트 크래시 해결" },
+        { "value": "20개+", "label": "이벤트 페이지 통합 어드민" },
+        { "value": "SSR → SSG", "label": "서버 부하·렌더링 개선" }
+      ],
       "content": [
         "커머스 웹뷰 레거시 코드(Scss, Axios)를 Tanstack Query·Tailwind로 점진적 이관, 비즈니스 로직과 UI를 분리해 신규 코드베이스와 공존 가능한 구조로 전환",
         "찜하기 목록에 Virtual Windowing 도입으로 대용량 리스트 크래시 해결, 불필요한 SSR을 SSG로 전환해 서버 부하·렌더링 개선",
@@ -51,6 +67,11 @@
       "date": "2024.03 ~ 2025.05",
       "title": "지엔터프라이즈",
       "role": "Frontend Engineer",
+      "highlights": [
+        { "value": "3초 → 1.3초", "label": "A/B SDK 서버 분기로 LCP 개선" },
+        { "value": "연 3,000만 원+", "label": "밴드위스 비용 80%+ 절감" },
+        { "value": "약 3주", "label": "개발 리소스 절감" }
+      ],
       "content": [
         "클라이언트에서 실험 그룹을 결정하던 레거시 A/B 테스트 SDK(2초+ 레이턴시)를 Next.js Middleware 서버 분기로 이전 → 실험 환경을 유지하며 LCP 3초 → 1.3초",
         "Vercel 밴드위스 비용 급증을 발견, S3 + CloudFront 전환으로 80%+ 절감(연 3천만 원+)",
@@ -72,11 +93,15 @@
       "date": "2020.11 ~ 2024.02",
       "title": "에이슬립",
       "role": "Frontend Engineer — 시드 단계 합류, 90명 규모까지 성장",
+      "highlights": [
+        { "value": "Seed → 90명", "label": "초기 합류, 성장 전 과정 동행" },
+        { "value": "Streaming SSR", "label": "B2B SaaS 초기 로딩 개선" },
+        { "value": "BFF · GraphQL", "label": "MSA 통합 대시보드 구축" }
+      ],
       "content": [
         "B2B SaaS 대시보드 — MSA API를 통합하는 BFF(GraphQL) 구축, Streaming SSR로 초기 로딩 개선, ROLE 기반 권한 어드민 설계, AWS CDK 배포 자동화",
         "B2C 앱 웹뷰 — JS-Bridge 기반 네이티브 ↔ 웹뷰 통신 구현, Virtual Slides로 렌더링 병목 해결",
-        "CRA → Next.js 점진적 전환 주도로 LCP·SEO 개선",
-        "오픈소스 — react-jsx-control(React 선언적 조건부 렌더링), ant-invariant(불변 패턴 TS 유틸리티) 개발·운영"
+        "CRA → Next.js 점진적 전환 주도로 LCP·SEO 개선"
       ],
       "tags": [
         "React",
@@ -90,33 +115,28 @@
   "skills": [
     {
       "category": "Backend",
-      "images": [
-        "/images/fastapi.png",
-        "/images/express.png",
-        "/images/node.jpeg",
-        "/images/python.png",
-        "/images/mysql.png",
-        "/images/ts.webp"
-      ]
+      "items": ["Node.js", "Python", "FastAPI", "GraphQL", "MySQL"]
     },
     {
       "category": "Frontend",
-      "images": [
-        "/images/ts.webp",
-        "/images/nextjs.png",
-        "/images/react.png",
-        "/images/html.png",
-        "/images/css.jpg",
-        "/images/javascript.png"
+      "items": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tanstack Query",
+        "Zustand",
+        "Playwright"
       ]
     },
     {
       "category": "Infra",
-      "images": [
-        "/images/vercel.jpeg",
-        "/images/aws.png",
-        "/images/docker.png",
-        "/images/heroku.png"
+      "items": [
+        "S3 · CloudFront",
+        "AWS CDK",
+        "Vercel",
+        "GitHub Actions",
+        "Datadog · Sentry",
+        "Docker"
       ]
     }
   ],
