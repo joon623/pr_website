@@ -64,6 +64,10 @@ body {
 }
 
 body {
+    /* 시스템 폰트 스택 — Noto Sans KR(231KB 렌더 블로킹 CSS) 대체.
+       안드로이드 시스템 한글 폰트가 Noto Sans KR이라 안드로이드에선 동일하게 보임 */
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+        "Noto Sans KR", "Malgun Gothic", "Segoe UI", Roboto, sans-serif;
     color: rgb(var(--foreground-rgb));
     background: linear-gradient(
             to bottom,
