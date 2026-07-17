@@ -70,16 +70,18 @@ function HomeInformation({ job, name, tagline, mantras }: HomeInformationProps) 
           textAlign: "center",
         }}
       >
+        {/* LCP: opacity 애니메이션 금지 — opacity 0으로 시작하면 hydration + fade가 끝날 때까지
+            브라우저가 "안 그려진 요소"로 취급해 LCP가 1s+ 늦게 기록됨. transform(y)만 움직인다. */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 16 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <Box sx={mixins.eyebrow}>{job}</Box>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 16 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.8, delay: 0.15 }}
         >
           <Typography
@@ -95,8 +97,8 @@ function HomeInformation({ job, name, tagline, mantras }: HomeInformationProps) 
           </Typography>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 16 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <Typography
